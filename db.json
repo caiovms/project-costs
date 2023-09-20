@@ -1,37 +1,15 @@
 {
   "projects": [
     {
-      "name": "New website development",
-      "budget": "3000",
-      "category": {
-        "id": "2",
-        "name": "Development"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 3
-    },
-    {
       "name": "Capzone",
-      "budget": "10540",
+      "budget": "100000",
       "category": {
         "id": "2",
         "name": "Development"
       },
       "cost": 0,
       "services": [],
-      "id": 4
-    },
-    {
-      "category": {
-        "id": "2",
-        "name": "Development"
-      },
-      "name": "projeto",
-      "budget": "1000",
-      "cost": 0,
-      "services": [],
-      "id": 5
+      "id": 1
     }
   ],
   "categories": [
