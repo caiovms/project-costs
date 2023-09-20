@@ -4,7 +4,7 @@ import Navbar from './components/layout/Navbar'
 import Container from './components/layout/Container'
 
 import Home from './components/pages/Home'
-import Projects from './components/pages/Project'
+import Projects from './components/pages/Projects'
 import NewProject from './components/pages/NewProject'
 import Company from './components/pages/Company'
 import Contact from './components/pages/Contact'
