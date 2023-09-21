@@ -7,6 +7,7 @@ import Container from '../layout/Container'
 import Message from '../layout/Message'
 import ProjecForm from '../project/ProjectForm'
 import ProjectServiceForm from '../project/ProjectServiceForm'
+import ProjectServiceCard from '../project/ProjectServiceCard'
 
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -16,6 +17,7 @@ function Project() {
     let { id } = useParams()
 
     const [project, setProject] = useState([])
+    const [services, setServices] = useState([])
     const [showProjectForm, setshowProjectForm] = useState(false)
     const [showServicForm, setshowServicForm] = useState(false)
     const [message, setMessage] = useState('')
@@ -31,12 +33,15 @@ function Project() {
             }).then(resp => resp.json())
               .then(data => {
                 setProject(data)
+                setServices(data.services)
                })
               .catch(err => console.log(err)) 
         }, 500)
     }, [id])
 
     function createService(project) {
+
+        setMessage('')
 
         const lastService = project.services[project.services.length - 1]
         
@@ -103,6 +108,10 @@ function Project() {
         setshowServicForm(!showServicForm)
     }
 
+    function removeService() {
+
+    }
+
     return (
       <>
         {project.name ? (
@@ -137,23 +146,35 @@ function Project() {
                         )}
                     </div>
                     <div className={styles.service_form_container}>
-                        <h2>Add a service:</h2>
+                        <h2>Add a Service</h2>
                         <button className={styles.btn} onClick={toggleServiceForm}>
-                            {!showServicForm ? 'Add service' : 'Close'}
+                            {!showServicForm ? 'Add Service' : 'Close'}
                         </button>
                         <div className={styles.project_info}>
-                            {showServicForm && (<ProjectServiceForm
-                                handleSubmit={createService}
-                                btnText='Add Service'
-                                projectData={project}
-                            />
+                            {showServicForm && (
+                                <ProjectServiceForm
+                                    handleSubmit={createService}
+                                    btnText='Add Service'
+                                    projectData={project}
+                                />
                             )}
                         </div>
                     </div>
-                    <Container customClass='start'>
-                        <p>Service items</p>
-                    </Container>
                     <h2>Services</h2>
+                    <Container customClass='start'>
+                        {services.length > 0 &&
+                            services.map((service) => (
+                                <ProjectServiceCard
+                                    id={service.id}
+                                    name={service.name}
+                                    cost={service.cost}
+                                    description={service.description}
+                                    key={service.id}
+                                    handleRemove={removeService}
+                                />
+                            ))}
+                        {services.length === 0 && <p>There's no services registered.</p>}
+                    </Container>
                 </Container>
             </div>
         ):(
