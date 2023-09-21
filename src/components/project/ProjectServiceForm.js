@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import Input from '../from/Input'
-import SubmitButton from '../from/SubmitButton'
+import Input from '../form/Input'
+import SubmitButton from '../form/SubmitButton'
 
 import styles from '../project/ProjectForm.module.css'
 

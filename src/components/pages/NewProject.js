@@ -1,10 +1,10 @@
 import styles from './NewProject.module.css'
 import ProjectForm from '../project/ProjectForm'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function NewProject() {
 
-    const history = useHistory()
+    const navigate = useNavigate()
 
     function createPost(project){
 
@@ -23,7 +23,7 @@ function NewProject() {
         .then((data) => {
             console.log(data)
             //redirect
-            history.push('/projects', {message: 'Project created successfully'})
+            navigate('/projects', {message: 'Project created successfully'})
         })
         .catch((err => console.log(err)))        
     }
@@ -31,7 +31,7 @@ function NewProject() {
     return (
         <div className={styles.newproject_container}>
             <h1>Create Project</h1>
-            <p>Create your project to add services later.</p>
+            <p>Create your project to add services later</p>
             <ProjectForm handleSubmit={createPost} btnText='Create Project'/>
         </div>
     )
