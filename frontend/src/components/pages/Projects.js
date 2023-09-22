@@ -8,7 +8,6 @@ import LinkButton from '../layout/LinkButton'
 import ProjectCard from '../project/ProjectCard'
 
 import styles from './Projects.module.css'
-import { method } from 'lodash'
 
 function Projects() {
 
