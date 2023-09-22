@@ -25,3 +25,28 @@ Content-Type: application/json
     "cost": 1000,
     "description": "A Compliance US Project"
 }
+
+###
+POST http://localhost:8000/api/categories
+Content-Type: application/json
+
+{
+    "description": "A Compliance US Project"
+}
+
+###
+GET http://localhost:8000/api/categories
+
+###
+GET http://localhost:8000/api/categories/{id}
+
+###
+DELETE  http://localhost:8000/api/categories/{id}
+
+###
+PUT http://localhost:8000/api/categories/{id}
+Content-Type: application/json
+
+{
+    "description": "Development"
+}
