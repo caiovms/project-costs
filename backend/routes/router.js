@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
-const categoryRouter = require("./category");
+const projectsRouter = require("./projects");
+router.use("/", projectsRouter);
 
-router.use("/", categoryRouter);
 
 module.exports = router;

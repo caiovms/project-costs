@@ -1,0 +1,27 @@
+POST http://localhost:8000/api/projects
+Content-Type: application/json
+
+{
+    "name": "CapZone",
+    "cost": 1000,
+    "description": "A Compliance US Project"
+}
+
+###
+GET http://localhost:8000/api/projects
+
+###
+GET http://localhost:8000/api/projects/{id}
+
+###
+DELETE  http://localhost:8000/api/projects/{id}
+
+###
+PUT http://localhost:8000/api/projects/{id}
+Content-Type: application/json
+
+{
+    "name": "CapZone Analytics",
+    "cost": 1000,
+    "description": "A Compliance US Project"
+}
