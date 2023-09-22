@@ -5,6 +5,9 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+const conn = require("./db/conn")
+conn()
+
 app.listen(8000, function(){
-    console.log("Server online!")
+    console.log("[Project-Cost] - Server online.")
 })
