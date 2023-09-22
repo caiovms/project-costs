@@ -4,7 +4,16 @@ Content-Type: application/json
 {
     "name": "CapZone",
     "cost": 1000,
-    "description": "A Compliance US Project"
+    "description": "A Compliance US Project",
+    "category": {
+        "description": "Development"
+    },
+    "services": [
+        {
+             "name": "DevOps",
+             "budget": 10000
+        }
+    ]
 }
 
 ###
@@ -23,7 +32,7 @@ Content-Type: application/json
 {
     "name": "CapZone Analytics",
     "cost": 1000,
-    "description": "A Compliance US Project"
+    "description": "Infrastructure"
 }
 
 ###
@@ -32,7 +41,7 @@ POST http://localhost:8000/api/categories
 Content-Type: application/json
 
 {
-    "description": "A Compliance US Project"
+    "description": "Development"
 }
 
 ###
@@ -49,7 +58,7 @@ PUT http://localhost:8000/api/categories/{id}
 Content-Type: application/json
 
 {
-    "description": "Development"
+    "description": "Infrastructure"
 }
 
 ###
@@ -58,7 +67,7 @@ POST http://localhost:8000/api/services
 Content-Type: application/json
 
 {
-    "name": "A Compliance US Project",
+    "name": "DevOps",
     "budget": 10000
 }
 
@@ -77,7 +86,7 @@ PUT http://localhost:8000/api/services/{id}
 Content-Type: application/json
 
 {
-    "name": "A Compliance US Project",
+    "name": "QA",
     "budget": 10000
 }
 ###
