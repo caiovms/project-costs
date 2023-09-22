@@ -6,4 +6,7 @@ router.use("/", projectsRouter);
 const categoriesRouter = require("./categories");
 router.use("/", categoriesRouter);
 
+const servicsRouter = require("./services");
+router.use("/", servicsRouter);
+
 module.exports = router;

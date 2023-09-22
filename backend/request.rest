@@ -27,6 +27,7 @@ Content-Type: application/json
 }
 
 ###
+
 POST http://localhost:8000/api/categories
 Content-Type: application/json
 
@@ -50,3 +51,33 @@ Content-Type: application/json
 {
     "description": "Development"
 }
+
+###
+
+POST http://localhost:8000/api/services
+Content-Type: application/json
+
+{
+    "name": "A Compliance US Project",
+    "budget": 10000
+}
+
+###
+GET http://localhost:8000/api/services
+
+###
+GET http://localhost:8000/api/services/{id}
+
+###
+DELETE  http://localhost:8000/api/services/{id}
+
+###
+PUT http://localhost:8000/api/services/{id}
+
+Content-Type: application/json
+
+{
+    "name": "A Compliance US Project",
+    "budget": 10000
+}
+###
