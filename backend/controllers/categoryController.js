@@ -6,7 +6,7 @@ const categoryController = {
         try {
             
             const category = {
-                description: req.body.description,
+                name: req.body.name
             };
 
             const response = await CategoryModel.create(category);
