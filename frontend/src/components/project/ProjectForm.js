@@ -36,9 +36,8 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
     setProject({
       ...project,
       category: {
-        id: e.target.value,
-        name: e.target.options[e.target.selectedIndex].text,
-      },
+        name: e.target.options[e.target.selectedIndex].text
+      }
     })
   }
 

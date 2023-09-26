@@ -9,10 +9,6 @@ function NewProject() {
     function createPost(project){
 
         fetch('http://localhost:8000/api/projects', {
-        project.cost = 0
-        project.services = []
-
-        fetch('http://localhost:5000/projects', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -20,9 +16,7 @@ function NewProject() {
             body: JSON.stringify(project)
         })
         .then((resp) => resp.json())
-        .then((data) => {
-            console.log(data)
-            //redirect
+        .then(() => {
             navigate('/projects', {message: 'Project created successfully'})
         })
         .catch((err => console.log(err)))        

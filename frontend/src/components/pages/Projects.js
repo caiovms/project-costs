@@ -46,7 +46,7 @@ function Projects() {
             }  
         }).then(resp => resp.json())
           .then(() => {
-            setProjects(projects.filter(project => project.id !== id))
+            setProjects(projects.filter(project => project._id !== id))
             setProjectMessage('Project removed successfully!')
            })
           .catch(err => console.log(err)) 
@@ -64,11 +64,11 @@ function Projects() {
                 {projects.length > 0 &&
                     projects.map((project) => (
                         <ProjectCard
-                          id={project.id} 
+                          id={project._id} 
                           name={project.name}
                           budget={project.budget}
                           category={project.category.name}
-                          key={project.id}
+                          key={project._id}
                           handleRemove={removeProject}
                         />
                     ))}

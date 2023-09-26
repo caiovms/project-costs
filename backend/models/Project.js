@@ -10,13 +10,13 @@ const projectSchema = new Schema({
         type: String, 
         require: true
     },
-    cost: {
+    budget: {
         type: Number, 
         require: true
     },
-    description: {
-        type: String, 
-        require: true
+    cost: {
+        type: Number, 
+        default: 0
     },
     category:{
         type: categorySchema

@@ -1,5 +1,16 @@
 const { Project: ProjectModel } = require("../models/Project");
 
+const checkProjectBudget = (budget, services) => {
+
+    const servicesBudget = services.reduce((budget, service) => budget + service.budget, 0);
+
+    if(servicesBudget > budget){
+        return false;
+    }
+
+    return true;
+}
+
 const projectController = {
 
     create: async(req, res) => {
@@ -7,11 +18,15 @@ const projectController = {
             
             const project = {
                 name: req.body.name,
-                cost: req.body.cost,
-                description: req.body.description,
+                budget: req.body.budget,
                 category: req.body.category,
                 services: req.body.services
             };
+
+            if(project.services && !checkProjectBudget(project.budget, project.services)){
+                res.status(406).json({msg: "Insuficient budget."})
+                return
+            }
 
             const response = await ProjectModel.create(project);
 

@@ -35,11 +35,12 @@ function Project() {
             setProject(data)
             setServices(data.services)
           }),
-      0,
+      300,
     )
   }, [id])
 
   function createService(project) {
+
     const lastService = project.services[project.services.length - 1]
 
     lastService.id = uuidv4()
@@ -136,7 +137,7 @@ function Project() {
           <Container customClass='column'>
             {message && <Message type={type} msg={message} />}
             <div className={styles.details_container}>
-              <h1>Projeto: {project.name}</h1>
+              <h1>Project: {project.name}</h1>
               <button className={styles.btn} onClick={toggleProjectForm}>
                 {!showProjectForm ? 'Edit Project' : 'Close'}
               </button>
