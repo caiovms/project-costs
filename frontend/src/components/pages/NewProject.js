@@ -8,7 +8,7 @@ function NewProject() {
 
     function createPost(project){
 
-        //initialize const and services
+        fetch('http://localhost:8000/api/projects', {
         project.cost = 0
         project.services = []
 
