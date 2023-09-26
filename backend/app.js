@@ -15,5 +15,5 @@ const routes = require("./routes/router");
 app.use('/api', routes);
 
 app.listen(8000, function(){
-    console.log("[Project-Cost] - Server online.")
+    console.log("[Project-Costs] - Server online.")
 });
