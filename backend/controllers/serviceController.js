@@ -7,7 +7,8 @@ const serviceController = {
             
             const service = {
                 name: req.body.name,
-                budget: req.body.budget
+                budget: req.body.budget,
+                description: req.body.description
             };
 
             const response = await ServiceModel.create(service);
@@ -81,6 +82,7 @@ const serviceController = {
             const service = {
                 name: req.body.name,
                 budget: req.body.budget,
+                description: req.body.description
             };
 
             const updatedService = await ServiceModel.findByIdAndUpdate(id, service);

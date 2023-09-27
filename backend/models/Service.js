@@ -10,6 +10,10 @@ const serviceSchema = new Schema({
     budget: {
         type: Number, 
         require: true
+    },
+    description: {
+        type: String, 
+        require: true
     }
 }, {timestamps: true});
 

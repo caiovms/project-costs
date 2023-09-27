@@ -11,7 +11,8 @@ Content-Type: application/json
     "services": [
         {
              "name": "DevOps",
-             "budget": 1000
+             "budget": 1000,
+             "description": "Hire a DevOps team"
         }
     ]
 }
