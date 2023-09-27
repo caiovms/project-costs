@@ -3,18 +3,33 @@ const router = require("express").Router();
 const serviceController = require("../controllers/serviceController");
 
 router.route("/services")
-      .post((req, res) => serviceController.create(req, res));
+      .post((req, res) => {
+      /*#swagger.tags = ['Service']*/
+      serviceController.create(req, res)
+      });
 
 router.route("/services")
-      .get((req, res) => serviceController.getAll(req, res));
+      .get((req, res) => {
+      /*#swagger.tags = ['Service']*/
+      serviceController.getAll(req, res)
+      });
 
 router.route("/services/:id")
-      .get((req, res) => serviceController.get(req, res));
+      .get((req, res) => {
+      /*#swagger.tags = ['Service']*/
+      serviceController.get(req, res)
+      });
 
 router.route("/services/:id")
-      .delete((req, res) => serviceController.delete(req, res));
+      .delete((req, res) => {
+      /*#swagger.tags = ['Service']*/
+      serviceController.delete(req, res)
+      });
 
 router.route("/services/:id")
-      .patch((req, res) => serviceController.update(req, res));
+      .patch((req, res) => {
+      /*#swagger.tags = ['Service']*/
+      serviceController.update(req, res)
+      });
 
 module.exports = router;
