@@ -98,8 +98,7 @@ const projectController = {
 
             const project = {
                 name: req.body.name,
-                cost: req.body.cost,
-                description: req.body.description,
+                budget: req.body.budget,
                 category: req.body.category,
                 services: req.body.services
             };

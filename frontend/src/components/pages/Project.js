@@ -76,7 +76,7 @@ function Project() {
 
   function removeService(id, cost) {
     const servicesUpdated = project.services.filter(
-      (service) => service.id !== id,
+      (service) => service._id !== id,
     )
 
     const projectUpdated = project
@@ -84,7 +84,7 @@ function Project() {
     projectUpdated.services = servicesUpdated
     projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
 
-    fetch(`http://localhost:8000/api/projects/${projectUpdated.id}`, {
+    fetch(`http://localhost:8000/api/projects/${projectUpdated._id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -99,14 +99,15 @@ function Project() {
       })
   }
 
-  function editPost(project) {
+  function editProject(project) {
+
     if (project.budget < project.cost) {
       setMessage('The Budget cannot be less than the cost of the project!')
       setType('error')
       return false
     }
 
-    fetch(`http://localhost:8000/api/projects/${project.id}`, {
+    fetch(`http://localhost:8000/api/projects/${project._id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -156,7 +157,7 @@ function Project() {
               ) : (
                 <div className={styles.form}>
                   <ProjectForm
-                    handleSubmit={editPost}
+                    handleSubmit={editProject}
                     btnText='Save'
                     projectData={project}
                   />
@@ -183,11 +184,11 @@ function Project() {
               {services.length > 0 &&
                 services.map((service) => (
                   <ProjectServiceCard
-                    id={service.id}
+                    id={service._id}
                     name={service.name}
-                    cost={service.cost}
+                    budget={service.budget}
                     description={service.description}
-                    key={service.id}
+                    key={service._id}
                     handleRemove={removeService}
                   />
                 ))}
