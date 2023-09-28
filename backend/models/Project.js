@@ -6,6 +6,10 @@ const { categorySchema } = require("./Category")
 const { serviceSchema } = require("./Service")
 
 const projectSchema = new Schema({
+    _id: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        default: () => new mongoose.Types.ObjectId() 
+    },
     name: {
         type: String, 
         require: true
