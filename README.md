@@ -29,18 +29,24 @@ $ cd project-costs
 ```
 Install dependencies
 
+```sh
+$ npm install
+```
+
 Start back-end
 ```sh
+$ cd backend
 $ npm run backend
 ```
 Start front-end
 ```sh
+$ cd frontend
 $ npm start
 ```
 
 ### How to Use
 To access the front-end application, access the address http://localhost:3000
 
-To access the back-end application, access the address http://localhost:5000
+To access the back-end Swagger, access the address http://localhost:8000/api/doc
 
 ### Screenshots
