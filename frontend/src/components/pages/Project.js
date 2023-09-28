@@ -117,9 +117,10 @@ function Project() {
       .then((resp) => resp.json())
       .then((data) => {
         setProject(data)
-        setShowProjectForm(!showProjectForm)
         setMessage('Project Updated!')
         setType('success')
+        setShowProjectForm(!showProjectForm)
+        setProject({ ...project })
       })
   }
 
