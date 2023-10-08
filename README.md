@@ -51,19 +51,14 @@ To access the back-end Swagger, access the address http://localhost:8000/api/doc
 
 ### Screenshots
 
-https://www.youtube.com/watch?v=FXqX7oof0I4&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO&ab_channel=MatheusBattisti-HoradeCodar
-https://www.youtube.com/watch?v=anMK76I2dUA&ab_channel=MatheusBattisti-HoradeCodar
+![image](https://github.com/caiovms/project-costs/assets/5957094/d1f3821b-4d95-4894-bd57-81c75f12700f)
 
-### TODO List
+![image](https://github.com/caiovms/project-costs/assets/5957094/25b489cb-81c7-47a8-8e15-17a45ee7fb63)
 
-[x] Create Project
-[x] List Projects
-[x] Get Project
-[ ] Edit Project - Not Working
-[x] Remove Project
+![image](https://github.com/caiovms/project-costs/assets/5957094/a263ffe1-6280-4682-afee-fe05dd327588)
 
-[] Create Service - Does not work
-[x] List Services
-[x] Get Service
-[x] Edit Service
-[] Remove Service - Adjust UsedBudget subtraction
+![image](https://github.com/caiovms/project-costs/assets/5957094/ebcbb82d-5853-43bb-9f6d-155087adbabe)
+
+![image](https://github.com/caiovms/project-costs/assets/5957094/34a8b1d0-432d-477e-8af9-d985e9ad69b6)
+
+![image](https://github.com/caiovms/project-costs/assets/5957094/be739e8c-f60e-48e0-9667-19ce00fcca37)
