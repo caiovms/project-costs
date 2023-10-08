@@ -64,11 +64,11 @@ function Projects() {
                 {projects.length > 0 &&
                     projects.map((project) => (
                         <ProjectCard
+                          key={project._id}
                           id={project._id} 
                           name={project.name}
                           budget={project.budget}
                           category={project.category.name}
-                          key={project._id}
                           handleRemove={removeProject}
                         />
                     ))}

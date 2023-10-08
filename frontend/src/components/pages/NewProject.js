@@ -6,7 +6,7 @@ function NewProject() {
 
     const navigate = useNavigate()
 
-    function createPost(project){
+    function createProject(project){
 
         fetch('http://localhost:8000/api/projects', {
             method: 'POST',
@@ -26,7 +26,7 @@ function NewProject() {
         <div className={styles.newproject_container}>
             <h1>Create Project</h1>
             <p>Create your project to add services later</p>
-            <ProjectForm handleSubmit={createPost} btnText='Create Project'/>
+            <ProjectForm handleSubmit={createProject} btnText='Create Project'/>
         </div>
     )
 }

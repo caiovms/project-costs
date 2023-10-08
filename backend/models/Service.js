@@ -11,7 +11,7 @@ const serviceSchema = new Schema({
         type: String, 
         require: true
     },
-    budget: {
+    cost: {
         type: Number, 
         require: true
     },

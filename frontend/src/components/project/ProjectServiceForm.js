@@ -31,9 +31,9 @@ function ProjectServiceForm({ handleSubmit, btnText, projectData }){
             />
             <Input 
             type='number'
-            text='Service budget'
-            name='budget'
-            placeholder='Insert total value'
+            text='Service cost'
+            name='cost'
+            placeholder='Insert service cost amount'
             handleOnChange={handleChange}
             />
             <Input 

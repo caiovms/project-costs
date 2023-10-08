@@ -7,7 +7,7 @@ const serviceController = {
             
             const service = {
                 name: req.body.name,
-                budget: req.body.budget,
+                cost: req.body.cost,
                 description: req.body.description
             };
 
@@ -81,7 +81,7 @@ const serviceController = {
 
             const service = {
                 name: req.body.name,
-                budget: req.body.budget,
+                cost: req.body.cost,
                 description: req.body.description
             };
 

@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
-
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
@@ -15,9 +13,9 @@ import ProjectServiceCard from '../project/ProjectServiceCard'
 function Project() {
   let { id } = useParams()
   const [project, setProject] = useState([])
+  const [services, setServices] = useState([])
   const [showProjectForm, setShowProjectForm] = useState(false)
   const [showServiceForm, setShowServiceForm] = useState(false)
-  const [services, setServices] = useState([])
   const [message, setMessage] = useState('')
   const [type, setType] = useState('success')
 
@@ -40,14 +38,8 @@ function Project() {
   }, [id])
 
   function createService(project) {
-
-    const lastService = project.services[project.services.length - 1]
-
-    lastService.id = uuidv4()
-
-    const lastServiceCost = lastService.cost
-
-    const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
+    const serviceCost = project.services[project.services.length - 1].cost
+    const newCost = parseFloat(project.usedBudget) + parseFloat(serviceCost)
 
     if (newCost > parseFloat(project.budget)) {
       setMessage('Budget exceeded, check service value!')
@@ -56,7 +48,7 @@ function Project() {
       return false
     }
 
-    project.cost = newCost
+    project.usedBudget = newCost
 
     fetch(`http://localhost:8000/api/projects/${project._id}`, {
       method: 'PATCH',
@@ -67,7 +59,8 @@ function Project() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        setServices(data.services)
+        // setServices(data.updatedProject.services)
+        setProject(data.updatedProject)
         setShowServiceForm(!showServiceForm)
         setMessage('Service added!')
         setType('success')
@@ -132,6 +125,8 @@ function Project() {
     setShowServiceForm(!showServiceForm)
   }
 
+  console.log(project)
+
   return (
     <>
       {project.name ? (
@@ -149,10 +144,10 @@ function Project() {
                     <span>Category:</span> {project.category.name}
                   </p>
                   <p>
-                    <span>Total Budget:</span> R${project.budget}
+                    <span>Total Budget:</span> U${project.budget}
                   </p>
                   <p>
-                    <span>Used Budget:</span> R${project.cost}
+                    <span>Used Budget:</span> U${project.usedBudget}
                   </p>
                 </div>
               ) : (
@@ -185,11 +180,11 @@ function Project() {
               {services.length > 0 &&
                 services.map((service) => (
                   <ProjectServiceCard
+                    key={service._id}
                     id={service._id}
                     name={service.name}
-                    budget={service.budget}
+                    cost={service.cost}
                     description={service.description}
-                    key={service._id}
                     handleRemove={removeService}
                   />
                 ))}

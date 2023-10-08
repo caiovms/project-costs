@@ -18,7 +18,7 @@ const projectSchema = new Schema({
         type: Number, 
         require: true
     },
-    cost: {
+    usedBudget: {
         type: Number, 
         default: 0
     },

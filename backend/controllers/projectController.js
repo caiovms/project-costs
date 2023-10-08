@@ -1,10 +1,10 @@
 const { Project: ProjectModel } = require("../models/Project");
 
-const checkProjectBudget = (budget, services) => {
+const checkProjectBudget = (projectBudget, services) => {
 
-    const servicesBudget = services.reduce((budget, service) => budget + service.budget, 0);
+    const totalServicesCost = services.reduce((cost, service) => cost + service.cost, 0);
 
-    if(servicesBudget > budget){
+    if(totalServicesCost > projectBudget){
         return false;
     }
 
@@ -19,6 +19,7 @@ const projectController = {
             const project = {
                 name: req.body.name,
                 budget: req.body.budget,
+                usedBudget: req.body.usedBudget,
                 category: req.body.category,
                 services: req.body.services
             };
@@ -99,6 +100,7 @@ const projectController = {
             const project = {
                 name: req.body.name,
                 budget: req.body.budget,
+                usedBudget: req.body.usedBudget,
                 category: req.body.category,
                 services: req.body.services
             };

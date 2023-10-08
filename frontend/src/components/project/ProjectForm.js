@@ -56,7 +56,7 @@ function ProjectForm({ handleSubmit, btnText, projectData }) {
         type="number"
         text="Project Budget"
         name="budget"
-        placeholder="Insert total budget"
+        placeholder="Insert project budget"
         handleOnChange={handleChange}
         value={project.budget ? project.budget : ''}
       />
