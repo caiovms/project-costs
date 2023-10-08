@@ -4,7 +4,7 @@ Content-Type: application/json
 {
     "name": "CapZone",
     "budget": 10000,
-    "cost": 1000,
+    "usedBudget": 1000,
     "category": {
         "name": "Development"
     },
@@ -68,7 +68,7 @@ Content-Type: application/json
 
 {
     "name": "DevOps",
-    "budget": 10000
+    "cost": 10000
 }
 
 ###

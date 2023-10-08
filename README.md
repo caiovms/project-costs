@@ -29,9 +29,13 @@ $ cd project-costs
 ```
 Install dependencies
 
+```sh
+$ npm install
+```
+
 Start back-end
 ```sh
-$ npm run backend
+$ npm run back-end
 ```
 Start front-end
 ```sh
@@ -44,3 +48,20 @@ To access the front-end application, access the address http://localhost:3000
 To access the back-end application, access the address http://localhost:5000
 
 ### Screenshots
+
+https://www.youtube.com/watch?v=FXqX7oof0I4&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO&ab_channel=MatheusBattisti-HoradeCodar
+https://www.youtube.com/watch?v=anMK76I2dUA&ab_channel=MatheusBattisti-HoradeCodar
+
+### TODO List
+
+[x] Create Project
+[x] List Projects
+[x] Get Project
+[ ] Edit Project - Not Working
+[x] Remove Project
+
+[] Create Service - Does not work
+[x] List Services
+[x] Get Service
+[x] Edit Service
+[] Remove Service - Adjust UsedBudget subtraction
